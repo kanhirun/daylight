@@ -7,9 +7,9 @@ class Device(models.Model):
         db_table = 'devices'
 
     class DeviceType(models.TextChoices):
-        PRODUCTION = 'production'
-        CONSUMPTION = 'consumption'
-        STORAGE = 'storage'
+        PRODUCTION = 'PRODUCTION'
+        CONSUMPTION = 'CONSUMPTION'
+        STORAGE = 'STORAGE'
 
     class DeviceStatus(models.IntegerChoices):
         OFFLINE = 0

@@ -4,7 +4,7 @@ from . import device
 class Query(device.Query):
     pass
 
-class Mutation(ObjectType):
-    create_device = device.CreateDeviceMutation.Field()
+class Mutation(device.Mutation):
+    pass
 
 schema = Schema(query=Query, mutation=Mutation)
