@@ -1,3 +1,4 @@
 from .device import Device
+from .user import User
 
-__all__ = ['Device']
+__all__ = ['Device', 'User']
