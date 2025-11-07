@@ -46,7 +46,7 @@ class CreateDeviceMutation(Mutation):
     
     @classmethod
     def mutate(cls, root, info, id, data):
-        # TODO: Validate jwt token
+        # TODO: Validate jwt token at higher level
 
         created = Device(**data)
         created.save()
@@ -64,8 +64,6 @@ class UpdateDeviceMutation(Mutation):
 
     @classmethod
     def mutate(cls, root, info, id, data):
-        # Get user id from jwt token
-
         updated = Device.objects.get(id=id)
 
         for k, v in data.items():
