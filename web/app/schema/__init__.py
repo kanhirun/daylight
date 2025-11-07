@@ -1,14 +1,10 @@
 from graphene import ObjectType, Schema, List, Boolean
-from .device import CreateDeviceMutation
+from . import device
 
-class Query(ObjectType):
-    retrieve_devices = Boolean()
-
-    # TODO: Extract me
-    def resolve_retrieve_devices(root, info):
-        return True
+class Query(device.Query):
+    pass
 
 class Mutation(ObjectType):
-    create_device = CreateDeviceMutation.Field()
+    create_device = device.CreateDeviceMutation.Field()
 
 schema = Schema(query=Query, mutation=Mutation)
